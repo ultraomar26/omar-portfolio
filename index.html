@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عمر | مبرمج ومطور ويب محترف</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4e54c8;
+            --secondary: #8f94fb;
+            --dark: #1a1d3a;
+            --light: #f8f9ff;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--light);
+            overflow-x: hidden;
+            color: #333;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(to left, var(--primary), var(--secondary));
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.03' d='M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,224C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-highlight {
+            color: #ffd166;
+            position: relative;
+        }
+        
+        /* Skills Section */
+        .skills-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to left, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .skill-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: none;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+        
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .skill-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: linear-gradient(to left, #f8f9ff, #eef1ff);
+            position: relative;
+        }
+        
+        .contact-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 2.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        .contact-btn {
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border: none;
+            margin: 0.5rem;
+            min-width: 280px;
+        }
+        
+        .contact-btn i {
+            margin-left: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        .email-btn {
+            background: #ffffff;
+            color: #333;
+            border: 2px solid var(--primary);
+        }
+        
+        .email-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(78, 84, 200, 0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.7);
+            padding: 2rem 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animated {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .contact-btn {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">  عمر السيد</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">مهاراتي</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">تواصل معي</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mx-auto text-center hero-content">
+                <h1 class="hero-title animated">
+                    أهلاً، أنا <span class="hero-highlight">عمر</span>
+                </h1>
+                <p class="hero-subtitle animated delay-1">
+                    مبرمج ومطور ويب محترف متخصص في بناء حلول رقمية مبتكرة
+                </p>
+                <a href="#contact" class="btn btn-light btn-lg px-5 py-3 animated delay-2" style="border-radius: 12px;">
+                    تواصل معي <i class="fas fa-arrow-left ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section">
+    <div class="container">
+        <h2 class="section-title text-center">مهاراتي التقنية</h2>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="skill-card p-4 text-center animated">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3 class="skill-title">تطوير بايثون</h3>
+                    <p>
+                        تطوير تطبيقات ويب وحلول أوتوميشين باستخدام بايثون وأطر العمل الحديثة مثل Django وFlask
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="skill-card p-4 text-center animated delay-1">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="skill-title">تطوير الواجهات</h3>
+                    <p>
+                        بناء واجهات مستخدم تفاعلية وسريعة الاستجابة باستخدام HTML5, CSS3, JavaScript
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="skill-card p-4 text-center animated delay-2">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="skill-title">قواعد البيانات</h3>
+                    <p>
+                        تصميم وإدارة قواعد البيانات العلائقية (MySQL, PostgreSQL) وقواعد NoSQL (MongoDB)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <div class="contact-card animated">
+            <div class="text-center mb-5">
+                <div class="contact-icon">
+                    <i class="fas fa-paper-plane"></i>
+                </div>
+                <h2 class="section-title">تواصل معي</h2>
+                <p class="lead">
+                    لاستشارات أو مشاريع برمجية، أنا متاح للتواصل عبر الوسائل التالية
+                </p>
+            </div>
+            
+            <div class="d-flex flex-wrap justify-content-center">
+                <a href="https://wa.me/201066419916" class="btn contact-btn whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> تواصل عبر واتساب: 01066419916
+                </a>
+                
+                <a href="mailto:ultra.our@gmail.com" class="btn contact-btn email-btn">
+                    <i class="fas fa-envelope"></i> راسلني عبر الإيميل
+                </a>
+            </div>
+            
+            <p class="text-center mt-5 mb-0 text-muted">
+                الرد خلال 24 ساعة | تواصل مباشر وفوري
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer text-center">
+    <div class="container">
+        <p>© 2023 عمر. جميع الحقوق محفوظة</p>
+        <p class="mb-0">مطور ويب محترف | بناء حلول رقمية متميزة</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Simple animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+        const animatedElements = document.querySelectorAll('.animated');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        animatedElements.forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(element);
+        });
+    });
+</script>
+</body>
+</html>
